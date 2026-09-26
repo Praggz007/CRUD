@@ -1,0 +1,23 @@
+<main *ngIf="!auth.isAuthenticated" class="login-shell">
+  <form class="login-card" [formGroup]="loginForm" (ngSubmit)="login()">
+    <h1>Employee Register</h1>
+    <p>Sign in to manage employee records.</p>
+    <label for="username">Username</label>
+    <input id="username" class="form-control" formControlName="username" autocomplete="username" required>
+    <label for="password">Password</label>
+    <input id="password" class="form-control" type="password" formControlName="password" autocomplete="current-password" required>
+    <p *ngIf="loginError" class="login-error" role="alert">{{ loginError }}</p>
+    <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Sign in</button>
+  </form>
+</main>
+
+<div *ngIf="auth.isAuthenticated" class="container">
+  <div class="d-flex justify-content-end pt-3">
+    <button class="btn btn-outline-secondary btn-sm" type="button" (click)="logout()">Sign out</button>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <app-employees></app-employees>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+{
+  "name": "mean-stack-crud-angular-15",
+  "version": "1.0.0",
+  "description": "MEAN Stack CRUD with Angular 15",
+  "scripts": {
+    "install:server": "npm install --prefix server",
+    "install:client": "npm install --prefix client",
+    "install:all": "npm run install:server && npm run install:client",
+    "start:server": "npm start --prefix server",
+    "dev:server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client",
+    "start:client": "npm start --prefix client",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,green\" \"npm run dev:server\" \"npm run start:client\"",
+    "start": "concurrently -n \"SERVER,CLIENT\" -c \"blue,green\" \"npm run start:server\" \"npm run start:client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
