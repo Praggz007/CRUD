@@ -36,6 +36,8 @@ AUTH_TOKEN_SECRET=use at least 32 random characters
 
 Set `API_URL=https://your-api-domain.vercel.app/api` on the frontend project. The client build reads this value; it must be the public URL of the API project plus `/api`.
 
+###default details
+to check out the app: use username:admin and password: db5639c86d5f4139bae1c8d39485326b
 For local development, `API_URL` defaults to `http://localhost:3000/api`. `CLIENT_URL` accepts a comma-separated list of exact origins for local, preview, or production frontends. Configure secrets in Vercel Project Settings, not in source files. Keep Atlas access limited to the network sources you intend to allow.
 
 ---
